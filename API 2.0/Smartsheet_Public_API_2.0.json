@@ -1,0 +1,4243 @@
+{
+  "info": {
+    "_postman_id": "387880c8-1c32-4f6f-b7d8-b0d92a22b1f7",
+    "name": "Smartsheet Public API 2.0",
+    "description": "API calls for API 2.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "d80983c8-48ca-42db-8b4a-c06dae0cfef5",
+      "name": "Attachments",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "0052865e-6d1f-48da-bb48-79d76a6c64ba",
+          "name": "Get an attachment on a sheet 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/attachments/{{attachmentId}}",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "bbaa1e79-9734-42c3-8e33-ca8f678369d6",
+          "name": "Get attachment on a sheet 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/attachments",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4a161fcd-1f97-402c-920a-f689d22832ac",
+          "name": "Get attachment versions on a sheet 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/attachments/{{attachmentId}}/versions",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b92670a3-c5fe-48cd-b366-bb0c8bdc30ff",
+          "name": "Add an attachment to sheets 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Disposition",
+                "value": "attachment; filename=\"TestGIf.gif\""
+              },
+              {
+                "key": "Content-Type",
+                "value": "image/gif"
+              },
+              {
+                "key": "Content-Length",
+                "value": "8500"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/attachments",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a3a15505-bfc6-4985-b526-c5ed1b5a3207",
+          "name": "Add an attachment to sheets - mulitpart 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "con",
+                "value": "multipart/form-data"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "value": null
+                }
+              ]
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/attachments",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0427f8af-6712-43fa-b505-1499694b2593",
+          "name": "Add version of a attachment to sheets 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Disposition",
+                "value": "attachment; filename=\"TestGIf.gif\""
+              },
+              {
+                "key": "Content-Type",
+                "value": "image/gif"
+              },
+              {
+                "key": "Content-Length",
+                "value": "8500"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/attachments/{{attachmentId}}/versions",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "84939e10-ea19-4b4c-bcf5-1b91ab613fe0",
+          "name": "Add a sheet attachment from Google Drive, Dropbox, Box and evernote",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"name\": \"test.gif\",\n\"description\":\"value placed in the description field, accessible via edit description\",\n\"url\": \"https://www.dropbox.com/s/m3nhmgt3a6e8rc2/TestGIf.gif?dl=0\", \n\"attachmentType\":\"DROPBOX\"\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/attachments"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "93ab9a3f-cdb3-44f4-9d9f-585a32940b96",
+          "name": "Add an attachment to a comment in a sheets 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Disposition",
+                "value": "attachment; filename=\"TestGIf.gif\""
+              },
+              {
+                "key": "Content-Type",
+                "value": "image/gif"
+              },
+              {
+                "key": "Content-Length",
+                "value": "8500"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/attachments",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "93bc4888-7044-4493-b8dc-5bc4bd7e87c9",
+          "name": "Delete an attachment on a sheet 2.0",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/attachments/{{attachmentId}}",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e07035e7-4a51-4785-836f-bc480c0d1308",
+          "name": "Delete an version of attachment on a sheet 2.0",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/attachments/{{attachmentId}}/versions",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "f4a6c163-9854-4859-9f1a-a4325fffee5a",
+      "name": "Columns",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "8bef60ae-f8b7-4dd6-ac99-5e2286693157",
+          "name": "Get columns on a sheet 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/columns",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "40bc8979-9b9a-444c-b94f-56f226dfa396",
+          "name": "Get a specific columns on a sheet 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/columns/{{columnId}}",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b755cc40-80a5-449d-b9cd-067f1606972d",
+          "name": "Add column in specific sheet 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[{\"title\": \"Numeric Values\",\"type\":\"TEXT_NUMBER\",\"index\": 1}]\n\n"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/columns",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d7b62fd2-7c67-4170-b2fd-831804b66920",
+          "name": "Bulk Add column in specific sheet 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\"title\": \"Numeric Values\",\"type\":\"TEXT_NUMBER\",\"index\": 1},\n    {\"title\": \"Created\",\"type\":\"CONTACT_LIST\",\"systemColumnType\":\"CREATED_BY\", \"index\": 1},\n    {\"title\": \"Created Date\",\"type\":\"DATETIME\",\"systemColumnType\":\"CREATED_DATE\", \"index\": 1}\n]\n"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/columns",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e362cfbd-01cb-46a5-b1f1-f85a7f8488c6",
+          "name": "Update a specific column on a sheet 2.0",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Numeric \",\r\n  \"type\":\"TEXT_NUMBER\",\r\n  \"index\": 1\r\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/columns/{{columnId}}",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3c93cb48-db71-460e-b36e-c0cf201e0f6a",
+          "name": "Update a options column on a sheet 2.0",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"index\":1,\r\n    \"title\":\"new picklist\",\r\n    \"type\":\"PICKLIST\",\r\n    \"options\":[\"hello\",\"hi\",\"hey\"]\r\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/columns/{{columnId}}",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "539a7c62-bc61-47b9-98b8-6cec6e0bccf0",
+          "name": "Delete a column on a sheet 2.0",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/columns/{{sheetId}}",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "369284f1-d400-4281-8206-b575d9cc1226",
+      "name": "Comments",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "21c636a5-9465-43b7-bcb7-f9854f39cabc",
+          "name": "Get a comment ",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/comments/{{commentId}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e67bffb5-8d5f-442c-be1a-87c6be077dbf",
+          "name": "Add an attachment to a comment sheets 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Disposition",
+                "value": "attachment; filename=\"TestGIf.gif\""
+              },
+              {
+                "key": "Content-Type",
+                "value": "image/gif"
+              },
+              {
+                "key": "Content-Length",
+                "value": "8500"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/comments/{{commentId}}/attachments",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a07568c5-5b51-4db0-9ec4-b28eaa94adb1",
+          "name": "Add a comment in a discussion on a sheet",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"text\":\"Hello\"\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/discussions/{{discussionId}}/comments"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e8c13f1b-7c17-426a-b5d4-877450cd86d9",
+          "name": "Add a comment to a discussion to a sheet 2.0 -  multipart upload",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "value": null
+                },
+                {
+                  "key": "comment",
+                  "value": "{\"text\":\"test\"}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/discussions/{{discussionId}}/comments"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3b8d52be-46f6-4f9c-9892-0e7bbef90451",
+          "name": "Delete  a comment sheets 2.0",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/comments/{{commentId}}",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "25e740fb-d98e-4e63-8385-9e5400cd4021",
+      "name": "Discussions",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "77e42bf9-ebab-4ca8-b16d-c2bfbd74a47e",
+          "name": "Get a list of discussion on a sheet 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/discussions"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5d406dd8-07a8-4b9c-8db2-d5a2a1c2720d",
+          "name": "Get a discussion on a sheet 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/discussions/{{discussionId}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "73210da1-917f-4be1-bb62-30193e468a8d",
+          "name": "Get attachments in a discussion on a sheet",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/discussions/{{discussionId}}/attachments"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d88fea95-917b-4b06-b0a7-b9c83731f89c",
+          "name": "Add a discussion to a sheet 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "value": null
+                },
+                {
+                  "key": "discussion",
+                  "value": "{\"title\":\"I created this discussion via the API\",\"comment\":{\"text\":\"The body of this discussion was created by the API too, Again I wonder how many characters I can add to this comment. Hmm i wonder what happens if i add this we'll see\"}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/discussions"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "1b211ba9-5399-482c-ba90-932c81699ce4",
+          "name": "Add a discussion to a row - multipart upload",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "value": null
+                },
+                {
+                  "key": "discussion",
+                  "value": "{\"title\":\"test\",\"comment\":{\"text\":\"Adding new item \"}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows/{{rowId}}/discussions"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f77da7cb-6881-41dc-be5c-5ae28c401157",
+          "name": "Add a discussion to a sheet 2.0 - multipart upload",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "value": null,
+                  "type": "file"
+                },
+                {
+                  "key": "discussion",
+                  "value": "{\"title\":\"test\",\"comment\":{\"text\":\"test\"}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/discussions"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "626cacfd-8185-4538-af83-c77ba8b9511d",
+          "name": "Delete a discussion on a sheet 2.0",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/discussions/{{discussionId}}"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "5814b4fe-c1bd-4e84-9ddc-640c71936ac2",
+      "name": "Favorites",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "eeb1e0ee-9e12-4b9c-8cde-f06d2d22ed85",
+          "name": "Get Favorites 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/favorites"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9514a3ac-bfca-4850-be92-e00f5c28307c",
+          "name": "Add to Favorites 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"type\":\"sheet\",\n    \"objectId\":2177503155513220\n  }\n]"
+            },
+            "url": "{{environment}}/favorites",
+            "description": "type: sheets, folders, workspaces\n,templates, reports"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4a3a42a4-162e-460e-a5de-2d669d2b599e",
+          "name": "Delete Favorites 2.0",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/favorites/",
+            "description": "type: /sheet/{id} , /workspace/{id}, /template{id}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b4ddedf4-14e8-40de-a2a2-ff10a07beb0c",
+          "name": "Delete Bulk Favorites 2.0 ",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{environment}}/favorites/sheet?objectIds={{objectId}}",
+              "host": [
+                "{{environment}}"
+              ],
+              "path": [
+                "favorites",
+                "sheet"
+              ],
+              "query": [
+                {
+                  "key": "objectIds",
+                  "value": "{{objectId}}"
+                }
+              ]
+            },
+            "description": "?objectIds=id,id\ntype: /sheet/{id} , /workspace/{id}, /template{id}"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "d57fd86a-88f2-459b-a63a-9c0641be5ce2",
+      "name": "Folders",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "566be3b1-66cd-48c6-afe3-c675a0ab287d",
+          "name": "Get Specific Folder 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/folders"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b9fd59ac-9984-4d17-a27c-cdba041a864d",
+          "name": "Add Folder in a folder 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"api folder in a folder of a folder called sheets\"\n}"
+            },
+            "url": "{{environment}}/folders/{{folderId}}/folders"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "efc468d1-c610-474b-9e21-f809ee6bca40",
+          "name": "Create Sheet specified folder ID",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"API 1.1.6 Created Sheet\",\n  \"columns\":\n  [\n    {\n      \"title\":\"Row ID\",\"type\":\"TEXT_NUMBER\",\n      \"systemColumnType\":\"AUTO_NUMBER\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Primary Column\",\n      \"primary\":true,\n      \"type\":\"TEXT_NUMBER\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Favorite\",\n      \"type\":\"CHECKBOX\",\n      \"symbol\":\"STAR\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Modified\",\n      \"type\":\"DATETIME\",\n      \"systemColumnType\":\"MODIFIED_DATE\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Modified By\",\n      \"type\":\"CONTACT_LIST\",\n      \"systemColumnType\":\"MODIFIED_BY\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Created\",\n      \"type\":\"DATETIME\",\n      \"systemColumnType\":\"CREATED_DATE\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Created By\",\n      \"type\":\"CONTACT_LIST\",\n      \"systemColumnType\":\"CREATED_BY\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    }\n  ]\n}"
+            },
+            "url": "{{environment}}/folders/{{folderId}}/sheets",
+            "description": "Creates sheet in specified folder id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "2c6cc19d-b0f2-4678-8959-917e2380ebe5",
+          "name": "Create Copy of Folder New",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"destinationType\":\"workspace\",\n    \"destinationId\":794256324487044,\n    \"newName\":\"test folder copy\"\n}"
+            },
+            "url": {
+              "raw": "{{environment}}/folders/{{folderId}}/copy?include=all&skipRemap=reports,cellLinks",
+              "host": [
+                "{{environment}}"
+              ],
+              "path": [
+                "folders",
+                "{{folderId}}",
+                "copy"
+              ],
+              "query": [
+                {
+                  "key": "include",
+                  "value": "all"
+                },
+                {
+                  "key": "skipRemap",
+                  "value": "reports,cellLinks"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8ce50a68-bb9f-40c0-87b8-5fc02b964365",
+          "name": "Move folder into home, workspace or other folder",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"destinationType\":\"workspace\",\n    \"destinationId\":5731063533201284,\n    \"newName\":\"API Archive folder\"\n}"
+            },
+            "url": "{{environment}}/folders/{{folderId}}/move",
+            "description": "moving to workspace or folder\nrequires destinationId\n\noptional is newName attribute to change name of folder"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e2cf6e64-2ef5-4dbc-994b-8a5078a13b6c",
+          "name": "Import a sheet into a folder",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Disposition",
+                "value": "attachment; filename=\"Close to 5000.xls\""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/vnd.ms-excel"
+              },
+              {
+                "key": "Content-Length",
+                "value": "9000"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{environment}}/folders/{{folderId}}/sheets/import",
+            "description": "vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e1f7ea9e-0e2a-4a09-83d9-a452049db2e6",
+          "name": "Update Folder 2.0",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"API sheet 1.1.6\"\n}"
+            },
+            "url": "{{environment}}/folders/{{folderId}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8201f55b-03b3-4ce8-81c8-adf1f45f7cbd",
+          "name": "Delete Folder 2.0",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"API sheet 1.1.6\"\n}"
+            },
+            "url": "{{environment}}/folders/{{folderId}}"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "ba0db0c8-7e2c-4327-8f8a-015f41f91769",
+      "name": "Groups",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "d5cdbd02-f723-463c-af82-2ecb38fa29de",
+          "name": "Get Groups",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/groups",
+            "description": "Gets Current user"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "202c0aa1-b773-4436-8046-372b6b60a000",
+          "name": "Get Specific Group",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/groups/{{groupId}}",
+            "description": "Gets Current user"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "914a85b3-1ca2-45af-8ebf-cba669365bfb",
+          "name": "Create a Group",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"Group A\",\n  \"description\":\"ORG users\",\n  \"members\":[{\"email\":\"jperez719.test@gmail.com\"},{\"email\":\"jperez719.test2@gmail.com\"}]\n}"
+            },
+            "url": "{{environment}}/groups",
+            "description": "Gets Current user"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3156e5b3-5ef9-401e-b49a-d47e6f62407b",
+          "name": "Add a member to a Group",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"jperez719.test5@gmail.com\"\n}"
+            },
+            "url": "{{environment}}/groups/{{groupId}}/members",
+            "description": "Gets Current user"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d8540615-e6f6-4b99-864c-959436a3b3ef",
+          "name": "Update Specific Group",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\":\"Group c\",\r\n  \"description\":\"ORG users 123\",\r\n  \"ownerId\":5434195393701764\r\n}"
+            },
+            "url": "{{environment}}/groups/{{groupId}}",
+            "description": "Gets Current user"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "28fc926a-c2ad-4a9f-9ee7-c207c8c17a04",
+          "name": "Delete a Group",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/groups/{{groupId}}",
+            "description": "Gets Current user"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "24437bff-6002-4afe-adba-f4ca5283e156",
+          "name": "Delete a member of a Group",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/groups/{{groupId}}/members/{{groupUserId}}",
+            "description": "Gets Current user"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "c67d1727-a9e3-4afa-b1b2-6eb21777c1fd",
+      "name": "Home",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "3b337ece-0438-48c0-8fa5-d4ff2ebedcc6",
+          "name": "Get Home 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/home",
+            "description": "Retrieves all items in home including reports and templates\n\n*remove \"?include=reports,templates\" to just see Sheets,folders, workspaces"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6f265f31-a8a3-4391-b275-3edc90afe731",
+          "name": "Get Folders in Home 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/home/folders"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e40c3b7c-85dc-4203-ac78-7570ac65f04e",
+          "name": "Create a folder 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"API Folder\"\n}"
+            },
+            "url": "{{environment}}/home/folders"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "7ae911a0-271a-490b-8313-569ba85cca54",
+      "name": "Images",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "a5705f4c-8dc3-414c-a271-36c3941b9d80",
+          "name": "Return a image url for mobile purposes",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[{\"imageId\":\"Rr_E6ENdHlBInwCGQxdwbw\",\"height\":300,\"width\":50}]"
+            },
+            "url": "{{environment}}/imageurls"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f0b4eea8-e00c-419b-8f23-a05189ddaf56",
+          "name": "Add an image to a row",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Disposition",
+                "value": "attachment; filename=\"Landscape_4.jpg\""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Length",
+                "value": "3820"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows/{{rowId}}/columns/{{columnId}}/cellimages",
+            "description": "?altText=<altText>"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0d0c04a7-55d8-4eca-bdc9-46ad8fef9280",
+          "name": "update alt text of image",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[{\n    \"id\":2344434575665028,\n    \"cells\":[{\"columnId\":497250746034052,\"image\":{\"altText\":\"NEWIMAGE\"}}]\n}]"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "2a57be11-8684-4a77-8be2-1420681e1e34",
+      "name": "Report",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "9cef3635-4345-40d1-aedc-52a87ecf850c",
+          "name": "Get list of reports ",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/reports"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d9fefcc3-f350-428d-a996-41fe44ed4ea2",
+          "name": "Get specific report",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/reports/{{reportId}}",
+            "description": "This is used for marketing. To get user information on User and what sheets are loaded and used frequently"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "092fd683-bfc1-4ac5-99b5-8bd42bf6e63b",
+          "name": "Send Report via Email",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sendTo\": [{\"email\":\"jperez719.test@gmail.com\"},{\"email\":\"jperez719.test2@gmail.com\"}],\n  \"subject\": \"Test Email for this sheet\",\n  \"message\": \"I am just testing this api email out\",\n  \"ccMe\": true,\n  \"format\": \"PDF\",\n  \"formatDetails\": {\"paperSize\":\"LETTER\"}\n}"
+            },
+            "url": "{{environment}}/reports/{{reportId}}/emails",
+            "description": "Sends sheet as PDF via email\n"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "59d957e9-1045-49dd-89d7-39ec62dca2ce",
+      "name": "Rows",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "5ce23e7a-f931-436c-800f-8371db518801",
+          "name": "Get a Rows in a  Sheet 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows/{{rowId}}",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "88a6df58-b3a9-442e-9597-67a8c38f961d",
+          "name": "Get an attachment in a Rows in a  Sheet 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows/{{rowId}}/attachments",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "99c591b5-82fe-4417-9979-95d453504b42",
+          "name": "Get cell history in Sheet 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows/{{rowId}}/columns/{{columnId}}/history",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6a44fca5-cbad-45cc-995c-e97242cb6e9d",
+          "name": "Add Rows to Sheet 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\"toTop\": true,\"cells\":[{\"columnId\":2053197138290564,\"value\": \"API Test Multiple Row 1\",\"strict\":false}]}\n]"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ac07e851-4206-449d-a6f8-4cb89d79e5e6",
+          "name": "Add Project data Rows to Sheet 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"toBottom\":true, \"cells\": [\r\n    {\"columnId\":7885835740702596,\"value\": \"API Test Multiple Row 1\",\"strict\":true},\r\n    {\"columnId\":567486346225540,\"value\":\"1\u65e5\",\"strict\":true},\r\n    {\"columnId\":5071085973596036,\"objectValue\":{\"objectType\":\"ABSTRACT_DATETIME\", \"value\": \"2015-05-18T15:25:00\"},\"strict\":true},\r\n    {\"columnId\": 7322885787281284, \"objectValue\": {\"objectType\": \"PREDECESSOR_LIST\",\"predecessors\": [{\"rowId\": 6760159172159364 , \"type\": \"FS\"}]}},\r\n    {\"columnId\":1693386253068164,\"objectValue\":{\"objectType\":\"CONTACT\", \"email\": \"jperez719.test@gmail.com\",\"name\":\"JP test\"},\"strict\":true},\r\n    {\"columnId\":6196985880438660,\"value\":\"100%\",\"strict\":false}\r\n    ]}"
+            },
+            "url": {
+              "raw": "{{environment}}/sheets/{{sheetId}}/rows?include=columnType,objectValue,displayValue&numericDates=true&exclude=nonexistentCells&projectParseLocale=en_US",
+              "host": [
+                "{{environment}}"
+              ],
+              "path": [
+                "sheets",
+                "{{sheetId}}",
+                "rows"
+              ],
+              "query": [
+                {
+                  "key": "include",
+                  "value": "columnType,objectValue,displayValue"
+                },
+                {
+                  "key": "numericDates",
+                  "value": "true"
+                },
+                {
+                  "key": "exclude",
+                  "value": "nonexistentCells"
+                },
+                {
+                  "key": "projectParseLocale",
+                  "value": "en_US"
+                }
+              ]
+            },
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3778d4dc-ee4a-414a-8b2d-1ace7a91f4be",
+          "name": "Add predecessor Rows to Sheet 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"toBottom\":true, \"cells\": [{\"columnId\": 5307614117554052, \"objectValue\": {\"objectType\": \"PREDECESSOR_LIST\",\"predecessors\": [{\"rowId\": 983509763417988, \"type\": \"FS\"}]}}]}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a648b313-72db-4dcb-9c08-6810ce8ee479",
+          "name": "Bulk Add Rows to Sheet 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\"toTop\": true,\"cells\":[{\"columnId\":2053197138290564,\"value\": \"API Test Multiple Row 1\",\"strict\":false}]},\n    {\"toTop\": true,\"cells\":[{\"columnId\":2053197138290564,\"value\": \"API Test Multiple Row 1\",\"strict\":false}]},\n    {\"toTop\": true,\"cells\":[{\"columnId\":2053197138290564,\"value\": \"API Test Multiple Row 1\",\"strict\":false}]},\n    {\"toTop\": true,\"cells\":[{\"columnId\":2053197138290564,\"value\": \"API Test Multiple Row 1\",\"strict\":false}]},\n    {\"toTop\": true,\"cells\":[{\"columnId\":2053197138290564,\"value\": \"API Test Multiple Row 1\",\"strict\":false}]},\n    {\"toTop\": true,\"cells\":[{\"columnId\":2053197138290564,\"value\": \"API Test Multiple Row 1\",\"strict\":false}]}\n]"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3fcee45a-182c-471f-8b2a-d51b71104f7f",
+          "name": "Bulk Add Project data Rows to Sheet 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[{\"toBottom\":true, \"cells\": [\r\n    {\"columnId\":5870564070975364,\"value\": \"API Test Multiple Row 1\",\"strict\":true},\r\n    {\"columnId\":3618764257290116,\"value\":\"1\u65e5\",\"strict\":true},\r\n    {\"columnId\":8122363884660612,\"objectValue\":{\"objectType\":\"ABSTRACT_DATETIME\", \"value\": \"2015-05-18T15:25:00\"},\"strict\":true},\r\n    {\"columnId\": 5307614117554052, \"objectValue\": {\"objectType\": \"PREDECESSOR_LIST\",\"predecessors\": [{\"rowId\": 6378748896405380 , \"type\": \"FS\"}]}},\r\n    {\"columnId\":3055814303868804,\"objectValue\":{\"objectType\":\"CONTACT\", \"email\": \"jperez719.test@gmail.com\",\"name\":\"JP test\"},\"strict\":true},\r\n    {\"columnId\":7559413931239300,\"value\":\"100%\",\"strict\":false}\r\n    ]\r\n},\r\n{\"toBottom\":true, \"cells\": [\r\n    {\"columnId\":5870564070975364,\"value\": \"API Test Multiple Row 2\",\"strict\":true},\r\n    {\"columnId\":3618764257290116,\"value\":\"1\u65e5\",\"strict\":true},\r\n    {\"columnId\":8122363884660612,\"objectValue\":{\"objectType\":\"ABSTRACT_DATETIME\", \"value\": \"2015-05-18T15:25:00\"},\"strict\":true},\r\n    {\"columnId\": 5307614117554052, \"objectValue\": {\"objectType\": \"PREDECESSOR_LIST\",\"predecessors\": [{\"rowId\": 6378748896405380 , \"type\": \"FS\"}]}},\r\n    {\"columnId\":3055814303868804,\"objectValue\":{\"objectType\":\"CONTACT\", \"email\": \"jperez719.test@gmail.com\",\"name\":\"JP test\"},\"strict\":true},\r\n    {\"columnId\":7559413931239300,\"value\":\"100%\",\"strict\":false}\r\n    ]\r\n},\r\n{\"toBottom\":true, \"cells\": [\r\n    {\"columnId\":5870564070975364,\"value\": \"API Test Multiple Row 3\",\"strict\":true},\r\n    {\"columnId\":3618764257290116,\"value\":\"1\u65e5\",\"strict\":true},\r\n    {\"columnId\":8122363884660612,\"objectValue\":{\"objectType\":\"ABSTRACT_DATETIME\", \"value\": \"2015-05-18T15:25:00\"},\"strict\":true},\r\n    {\"columnId\": 5307614117554052, \"objectValue\": {\"objectType\": \"PREDECESSOR_LIST\",\"predecessors\": [{\"rowId\": 6378748896405380 , \"type\": \"FS\"}]}},\r\n    {\"columnId\":3055814303868804,\"objectValue\":{\"objectType\":\"CONTACT\", \"email\": \"jperez719.test@gmail.com\",\"name\":\"JP test\"},\"strict\":true},\r\n    {\"columnId\":7559413931239300,\"value\":\"100%\",\"strict\":false}\r\n    ]\r\n}]"
+            },
+            "url": {
+              "raw": "{{environment}}/sheets/{{sheetId}}/rows?include=columnType,objectValue,displayValue&numericDates=true&exclude=nonexistentCells&projectParseLocale=en_US",
+              "host": [
+                "{{environment}}"
+              ],
+              "path": [
+                "sheets",
+                "{{sheetId}}",
+                "rows"
+              ],
+              "query": [
+                {
+                  "key": "include",
+                  "value": "columnType,objectValue,displayValue"
+                },
+                {
+                  "key": "numericDates",
+                  "value": "true"
+                },
+                {
+                  "key": "exclude",
+                  "value": "nonexistentCells"
+                },
+                {
+                  "key": "projectParseLocale",
+                  "value": "en_US"
+                }
+              ]
+            },
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "102a7e29-c540-405a-9cec-7730fefbd938",
+          "name": "Add a Row after a row to Sheet 2.0",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var resp = JSON.parse(responseBody);",
+                  "",
+                  "if(resp.result[0] && resp.result[0].cells[1].value.has(\"API Test Multiple Row 1\")){",
+                  "    tests[\"Row 1 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"rowId\", resp.result[0].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 1 was created\"] = false;",
+                  "}",
+                  "",
+                  "if(resp.result[1] && resp.result[1].cells[1].value.has(\"API Test Multiple Row 2\")){",
+                  "    tests[\"Row 2 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"RowId2\", resp.result[1].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 2 was created\"] = false;",
+                  "}",
+                  "",
+                  "if(resp.result[2] && resp.result[2].cells[1].value.has(\"API Test Multiple Row 3\")){",
+                  "    tests[\"Row 3 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"RowId3\", resp.result[2].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 3 was created\"] = false;",
+                  "}",
+                  "",
+                  "if(resp.result[3] && resp.result[3].cells[1].value.has(\"API Test Multiple Row 4\")){",
+                  "    tests[\"Row 4 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"RowId4\", resp.result[3].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 4 was created\"] = false;",
+                  "}",
+                  "",
+                  "if(resp.result[4] && resp.result[4].cells[1].value.has(\"API Test Multiple Row 5\")){",
+                  "    tests[\"Row 5 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"RowId5\", resp.result[4].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 5 was created\"] = false;",
+                  "}",
+                  "",
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\"siblingId\":8277124441237380,\"cells\":[{\"columnId\":2741491417278340,\"value\": \"API Test Multiple Row 1\",\"strict\":false}]}\n]"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "57cab7db-c977-47de-ba5c-9e4ad88dcad2",
+          "name": "Add a child row 2.0",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var resp = JSON.parse(responseBody);",
+                  "",
+                  "if(resp.result[0] && resp.result[0].cells[1].value.has(\"API Test Multiple Row 1\")){",
+                  "    tests[\"Row 1 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"rowId\", resp.result[0].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 1 was created\"] = false;",
+                  "}",
+                  "",
+                  "if(resp.result[1] && resp.result[1].cells[1].value.has(\"API Test Multiple Row 2\")){",
+                  "    tests[\"Row 2 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"RowId2\", resp.result[1].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 2 was created\"] = false;",
+                  "}",
+                  "",
+                  "if(resp.result[2] && resp.result[2].cells[1].value.has(\"API Test Multiple Row 3\")){",
+                  "    tests[\"Row 3 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"RowId3\", resp.result[2].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 3 was created\"] = false;",
+                  "}",
+                  "",
+                  "if(resp.result[3] && resp.result[3].cells[1].value.has(\"API Test Multiple Row 4\")){",
+                  "    tests[\"Row 4 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"RowId4\", resp.result[3].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 4 was created\"] = false;",
+                  "}",
+                  "",
+                  "if(resp.result[4] && resp.result[4].cells[1].value.has(\"API Test Multiple Row 5\")){",
+                  "    tests[\"Row 5 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"RowId5\", resp.result[4].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 5 was created\"] = false;",
+                  "}",
+                  "",
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\"parentId\":8277124441237380,\"cells\":[{\"columnId\":2741491417278340,\"value\": \"API Test Multiple Row 1\",\"strict\":false}]}\n]"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "522780f1-b7c3-4c43-b96f-a6c846b3ff00",
+          "name": "Add a Row to bottom of the Sheet 2.0",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var resp = JSON.parse(responseBody);",
+                  "",
+                  "if(resp.result[0] && resp.result[0].cells[1].value.has(\"API Test Multiple Row 1\")){",
+                  "    tests[\"Row 1 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"rowId\", resp.result[0].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 1 was created\"] = false;",
+                  "}",
+                  "",
+                  "if(resp.result[1] && resp.result[1].cells[1].value.has(\"API Test Multiple Row 2\")){",
+                  "    tests[\"Row 2 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"RowId2\", resp.result[1].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 2 was created\"] = false;",
+                  "}",
+                  "",
+                  "if(resp.result[2] && resp.result[2].cells[1].value.has(\"API Test Multiple Row 3\")){",
+                  "    tests[\"Row 3 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"RowId3\", resp.result[2].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 3 was created\"] = false;",
+                  "}",
+                  "",
+                  "if(resp.result[3] && resp.result[3].cells[1].value.has(\"API Test Multiple Row 4\")){",
+                  "    tests[\"Row 4 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"RowId4\", resp.result[3].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 4 was created\"] = false;",
+                  "}",
+                  "",
+                  "if(resp.result[4] && resp.result[4].cells[1].value.has(\"API Test Multiple Row 5\")){",
+                  "    tests[\"Row 5 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"RowId5\", resp.result[4].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 5 was created\"] = false;",
+                  "}",
+                  "",
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\"toBottom\":true,\"cells\":[{\"columnId\":2741491417278340,\"value\": \"API Test Multiple Row 1\",\"strict\":false}]}\n]"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d904ff54-98f1-47de-816c-a809922eab8f",
+          "name": "Add Row to Sheet w/link",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"toTop\": true,\n  \"cells\":\n    [{\n      \"columnId\":7245091044648836,\n      \"value\": \"Test Multiple Row\",\n      \"hyperlink\":{\"sheetId\": 1245056091875204},\n      \"format\":\",,,,,,,,,,,,,,,\",\n      \"strict\":false\n    }]\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows",
+            "description": "Adds row to sheet with a hyperlink\n\"url\":<url>\n\"sheetId\":<sheetId>\n\"reportId\":<reportId>"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "625886a8-5a8a-429e-ac0a-825aaba744bd",
+          "name": "Add a Row discussions in Sheet 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\":\"I created this discussion via the API\",\n  \"comment\":\n  {\n    \"text\":\"The body of this discussion was created by the API too, Again I wonder how many characters I can add to this comment. Hmm i wonder what happens if i add this <b onmouseover=alert('Wufff!')>click me!</b> we'll see\"\n  }\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows/{{rowId}}/discussions",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8617e2d1-cb54-45a4-ba42-3fb9cd8e2644",
+          "name": "Add predecessor Rows with lag to Sheet 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"toBottom\":true, \"cells\": [{\"columnId\": 3829870489823108, \"objectValue\": {\"objectType\": \"PREDECESSOR_LIST\",\"predecessors\": [{\"rowId\": 8349073733379972, \"type\": \"FS\",\"lag\":{\"objectType\":\"DURATION\",\"days\":1}}]}}]}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e03be960-8562-4302-a3df-1c4634b77bf0",
+          "name": "Add an attachment to a row in a sheets 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Disposition",
+                "value": "attachment; filename=\"TestGIf.gif\""
+              },
+              {
+                "key": "Content-Type",
+                "value": "image/gif"
+              },
+              {
+                "key": "Content-Length",
+                "value": "8500"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows/{{rowId}}/attachments",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f6918f60-835d-4b7d-aab7-41d934522a39",
+          "name": "Bulk add row project data 2.0",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var prScript"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var tests;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\"parentId\":2960253429016452,\"cells\":[\n    {\"columnId\":5554080815835012,\"value\":\"Api testing\",\"strict\":true},\n    {\"columnId\":3302281002149764,\"value\":\"TBD\",\"strict\":false},\n    {\"columnId\":7805880629520260,\"objectValue\":{\"objectType\":\"ABSTRACT_DATETIME\", \"value\": \"2015-06-08T15:25:00\"},\"strict\":true},\n    {\"columnId\": 6679980722677636, \"objectValue\": {\"objectType\": \"PREDECESSOR_LIST\",\"predecessors\": [{\"rowId\": 7919755244922756, \"type\": \"SS\"}]}}\n]},{\"parentId\":2960253429016452,\"cells\":[\n    {\"columnId\":5554080815835012,\"value\":\"Api testing\",\"strict\":true},\n    {\"columnId\":3302281002149764,\"value\":\"TBD\",\"strict\":false},\n    {\"columnId\":7805880629520260,\"objectValue\":{\"objectType\":\"ABSTRACT_DATETIME\", \"value\": \"2015-06-08T15:25:00\"},\"strict\":true},\n    {\"columnId\": 6679980722677636, \"objectValue\": {\"objectType\": \"PREDECESSOR_LIST\",\"predecessors\": [{\"rowId\": 7919755244922756, \"type\": \"FS\"}]}}\n]},{\"parentId\":2960253429016452,\"cells\":[\n    {\"columnId\":5554080815835012,\"value\":\"Api testing\",\"strict\":true},\n    {\"columnId\":3302281002149764,\"value\":\"TBD\",\"strict\":false},\n    {\"columnId\":7805880629520260,\"objectValue\":{\"objectType\":\"ABSTRACT_DATETIME\", \"value\": \"2015-06-08T15:25:00\"},\"strict\":true},\n    {\"columnId\": 6679980722677636, \"objectValue\": {\"objectType\": \"PREDECESSOR_LIST\",\"predecessors\": [{\"rowId\": 7919755244922756, \"type\": \"FF\"}]}}\n]},{\"parentId\":2960253429016452,\"cells\":[\n    {\"columnId\":5554080815835012,\"value\":\"Api testing\",\"strict\":true},\n    {\"columnId\":3302281002149764,\"value\":\"BDT\",\"strict\":false},\n    {\"columnId\":7805880629520260,\"objectValue\":{\"objectType\":\"ABSTRACT_DATETIME\", \"value\": \"2015-06-08T15:25:00\"},\"strict\":true},\n    {\"columnId\": 6679980722677636, \"objectValue\": {\"objectType\": \"PREDECESSOR_LIST\",\"predecessors\": [{\"rowId\": 7919755244922756, \"type\": \"SF\"}]}}\n]}\n]"
+            },
+            "url": {
+              "raw": "{{environment}}/sheets/{{sheetId}}/rows?include=objectValue,columnType,formatJson,filters,additionalSheetResults&exclude=nonexistentCells",
+              "host": [
+                "{{environment}}"
+              ],
+              "path": [
+                "sheets",
+                "{{sheetId}}",
+                "rows"
+              ],
+              "query": [
+                {
+                  "key": "include",
+                  "value": "objectValue,columnType,formatJson,filters,additionalSheetResults"
+                },
+                {
+                  "key": "exclude",
+                  "value": "nonexistentCells"
+                }
+              ]
+            },
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "64defec2-a6a3-4ff7-bf55-838722d3ee5c",
+          "name": "Send Row via Email 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sendTo\": [{\"email\":\"jperez719.test@gmail.com\"},{\"email\":\"jperez719.test2@gmail.com\"}],\n  \"subject\": \"Test Email for this sheet\",\n  \"message\": \"I am just testing this api email out, this is a row. Just a row\",\n  \"ccMe\": true,\n  \"includeDiscussions\":true,\n  \"includeAttachments\":false\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows/{{rowId}}/emails",
+            "description": "\n/sheet/{sheetId}/row/{rowId}/emails"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f85d3e1d-0c49-4093-b536-5f02ff57326b",
+          "name": "Send multiple Rows via Email 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sendTo\": [{\"email\":\"jperez719.test@gmail.com\"},{\"email\":\"jperez719.test2@gmail.com\"}],\n  \"subject\": \"Test Email for this sheet\",\n  \"message\": \"Multiple rows\",\n  \"ccMe\": false,\n  \"includeDiscussions\":true,\n  \"includeAttachments\":false,\n  \"rowIds\":[6176498886436740,3924699072751492]\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows/emails",
+            "description": "\n/sheet/{sheetId}/rows/emails"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "080a62b9-a1da-423b-a2bb-066fa16cca60",
+          "name": "Copy a Rows to Sheet 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"rowIds\":[2081921879566212,6585521506936708],\n    \"to\":{\"sheetId\":2564470045206404}\n}\n"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows/copy",
+            "description": "?include=attachments,discussions,children\n\n&ignoreRowsNotFound=true\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "1b9c1992-10f0-4333-8fc1-fc5f437e8bdd",
+          "name": "Move a Row to Sheet 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"rowIds\":[2081921879566212,6585521506936708],\n    \"to\":{\"sheetId\":2564470045206404}\n}\n"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows/move",
+            "description": "?include=attachments,discussions,children\n\n&ignoreRowsNotFound=true\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c7b861ad-f828-4826-a228-9e93b69862d7",
+          "name": "Copy a Rows to Sheet 2.0 - 5000",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"rowIds\":[6422793786025860,4170993972340612,8674593599711108,511819275102084,5015418902472580,2763619088787332,7267218716157828,\n    1637719181944708,6141318809315204,3889518995629956,8393118623000452,1074769228523396,5578368855893892,3326569042208644,7830168669579140,2200669135366020,6704268762736516,4452468949051268,8956068576421764,54422437947268,\n    4558022065317764,2306222251632516,6809821879003012,1180322344789892,5683921972160388,3432122158475140,7935721785845636,617372391368580,5120972018739076,2869172205053828,7372771832424324,1743272298211204,6246871925581700,\n    3995072111896452,8498671739266948,335897414657924,4839497042028420,2587697228343172,7091296855713668,1461797321500548,5965396948871044,3713597135185796,8217196762556292,898847368079236,5402446995449732,3150647181764484,\n    7654246809134980,2024747274921860,6528346902292356,4276547088607108,8780146715977604,195159926302596,4698759553673092,2446959739987844,6950559367358340,1321059833145220,5824659460515716,3572859646830468,8076459274200964,\n    758109879723908,5261709507094404,3009909693409156,7513509320779652,1884009786566532,6387609413937028,4135809600251780,8639409227622276,476634903013252,4980234530383748,2728434716698500,7232034344068996],\n    \"to\":{\"sheetId\":2564470045206404}\n}\n"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows/copy",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "514004bc-5fc7-4957-a499-0c650f036d8d",
+          "name": "Add a Row with sheet link of Sheet 2.0",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"cells\":\n    [\n        {\n            \"columnId\":4445734440331140,\n            \"value\": \"API Test sheet link Row 1\",\n            \"hyperlink\":\n            {\n                \"sheetId\":2564470045206404\n                \n            },\n            \"strict\":false\n        }\n    ]\n    \n}\n"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows/{{rowId}}",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "43a55239-34a0-449c-ad01-3f30f545a368",
+          "name": "Bulk Update Row cells in a  Sheet 2.0",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n    {\"id\": 1900017213564804,\"toTop\":true,  \"cells\" : [{\"value\" : \"Move row 1\",\"columnId\" : 176045946103684,\"strict\" : false}]},\r\n    {\"id\": 5277716934092676,\"toTop\":true, \"cells\" : [{\"value\" : \"Move row 2\",\"columnId\" : 176045946103684,\"strict\" : false}]} \r\n]"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a2011997-1d16-46be-97a4-ea411921ff3b",
+          "name": "Update Row cells in a  Sheet 2.0",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"cells\":[{\n     \"columnId\":2580623417206660,\n     \"value\":\"API Row test 3\"\n   }]\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows/{{rowId}}",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "eef9f449-82f4-4e05-b61b-d5c614576b12",
+          "name": "Update a cell  to add cell link 2.0",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cells\":\n  [\n    {\n      \"columnId\":1087825929103236,\n      \"value\":null,\n      \"linkInFromCell\":\n      {\n        \"sheetId\":3848699626448772,\n        \"rowId\":7079202227808132,\n        \"columnId\":7280275416737668\n      }\n    }\n  ]\n}"
+            },
+            "url": "{{environment}}/sheets/8352299253819268/rows/886752740173700",
+            "description": "This adds a cell link to a cell "
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "748321f3-a266-45ab-9b28-62c4137fbc23",
+          "name": "Lock a row 2.0",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"locked\":true\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows/{{rowId}}",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "18739a43-de49-4e85-b05f-8a6da702bdd1",
+          "name": "Delete a Rows in a  Sheet 2.0",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows/{{rowId}}",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f84d0d92-58ab-43ab-a60d-bcca1570b698",
+          "name": "Bulk Delete a Rows in a  Sheet 2.0",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/rows",
+            "description": "\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3d399ac8-d2d7-470d-b0d0-f29a97e6590c",
+          "name": "Get Row discussions in Sheet 2.0",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var resp = JSON.parse(responseBody);",
+                  "",
+                  "if(resp.result[0] && resp.result[0].cells[1].value.has(\"API Test Multiple Row 1\")){",
+                  "    tests[\"Row 1 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"rowId\", resp.result[0].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 1 was created\"] = false;",
+                  "}",
+                  "",
+                  "if(resp.result[1] && resp.result[1].cells[1].value.has(\"API Test Multiple Row 2\")){",
+                  "    tests[\"Row 2 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"RowId2\", resp.result[1].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 2 was created\"] = false;",
+                  "}",
+                  "",
+                  "if(resp.result[2] && resp.result[2].cells[1].value.has(\"API Test Multiple Row 3\")){",
+                  "    tests[\"Row 3 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"RowId3\", resp.result[2].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 3 was created\"] = false;",
+                  "}",
+                  "",
+                  "if(resp.result[3] && resp.result[3].cells[1].value.has(\"API Test Multiple Row 4\")){",
+                  "    tests[\"Row 4 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"RowId4\", resp.result[3].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 4 was created\"] = false;",
+                  "}",
+                  "",
+                  "if(resp.result[4] && resp.result[4].cells[1].value.has(\"API Test Multiple Row 5\")){",
+                  "    tests[\"Row 5 was created\"] = true;",
+                  "    postman.setEnvironmentVariable(\"RowId5\", resp.result[4].id);",
+                  "}",
+                  "else",
+                  "{",
+                  "    tests[\"Row 5 was created\"] = false;",
+                  "}",
+                  "",
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/8352299253819268/rows/886752740173700/discussions",
+            "description": "\n"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "587fb5c2-a4a7-4a81-82ce-5b3859500ac2",
+      "name": "Search",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "557dc1a9-6115-4fe8-b30a-291f2876bce3",
+          "name": "Search everything",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{environment}}/search?query=test",
+              "host": [
+                "{{environment}}"
+              ],
+              "path": [
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "query",
+                  "value": "test"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "11e8ea60-691d-4986-9eac-208696a5a369",
+          "name": "Search in a specified sheet 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{environment}}/search/sheets/{{sheetId}}?query=Data",
+              "host": [
+                "{{environment}}"
+              ],
+              "path": [
+                "search",
+                "sheets",
+                "{{sheetId}}"
+              ],
+              "query": [
+                {
+                  "key": "query",
+                  "value": "Data"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "c32ca4c5-075f-4734-aa2a-f7d4c3b590ea",
+      "name": "Shares",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "b56e46e2-c7b8-443e-8f20-f8c6d691fdbc",
+          "name": "Get Sheet shares",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/shares"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "760d887d-78ac-44cd-b909-091eb7985154",
+          "name": "Get specific sheet share 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/shares/{{shareId}}",
+            "description": "?sendEmail=true"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7c50c77a-a736-4da6-9de6-72aa9bac31cb",
+          "name": "List Sight Shares",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sights/{{sightId}}/shares"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d4c9864e-e92e-44e7-9a30-765c22d3bc93",
+          "name": "Get Sight Share",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sights/{{sightId}}/shares/{{shareId}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9a43710e-9438-4ca8-b89e-ba5cb6c1caf2",
+          "name": "Get a share in a report",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/reports/{{reportId}}/shares/{{shareId}}",
+            "description": "This is used for marketing. To get user information on User and what sheets are loaded and used frequently"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a6a9ee58-4093-496f-b4e7-3eed2482ea04",
+          "name": "Get specific report shares",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/reports/{{reportId}}/shares",
+            "description": "This is used for marketing. To get user information on User and what sheets are loaded and used frequently"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "82a17dbe-f7cb-4350-babe-1ba09af99f7b",
+          "name": "Get workspace shares",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}/shares"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "62fb413f-6ffc-47d3-a70c-be743368c44a",
+          "name": "Share a sheet 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\"groupId\":361048743143300,\"accessLevel\":\"ADMIN\"},\n    {\"email\":\"jperez719.test3@gmail.com\",\"accessLevel\":\"VIEWER\"}\n]"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/shares",
+            "description": "?sendEmail=true"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e3fc0ae5-95b6-4121-943d-9f6ade5652e8",
+          "name": "Share workspace",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\":\"jperez719.test2@gmail.com\", \"accessLevel\": \"EDITOR\"}"
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}/shares"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b4b4612c-7fbe-44e5-a862-692aeb1a32a6",
+          "name": "Sharing workspace to multiple people",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"shares\":\n [\n   {\n     \"email\":\"jperez719.test@gmail.com\"\n   },\n   {\n     \"email\":\"jperez719.test2@gmail.com\"\n   }\n ],\n \"subject\":\"My New Smartsheet email test share\",\n \"message\":\"Hello everyone, how are you? I have shared this sheet with you to see if it will share. Is everyone OK with this\",\n \"accessLevel\":\"ADMIN\",\n \"ccMe\":false\n}"
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}/shares/multi"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f4409d8a-a693-41e9-958b-25f59b06aaf4",
+          "name": "Share a sheet / multi 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"shares\":\n [\n   {\n     \"email\":\"jperez719.test@gmail.com\"\n   },\n   {\n     \"email\":\"jperez719.test2@gmail.com\"\n   }\n ],\n \"subject\":\"My New Smartsheet email test share\",\n \"message\":\"Hello everyone, how are you? I have shared this sheet with you to see if it will share. Is everyone OK with this\",\n \"accessLevel\":\"ADMIN\",\n \"ccMe\":false\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/shares/multi",
+            "description": "Method used by mobile"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "03797eee-7ca3-4ed9-8333-871377124197",
+          "name": "Share a report",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"jperez719.test@gmail.com\",\n    \"accessLevel\":\"EDITOR\"\n}"
+            },
+            "url": "{{environment}}/reports/{{reportId}}/shares",
+            "description": "This is used for marketing. To get user information on User and what sheets are loaded and used frequently"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "583e2770-9353-4e9f-b87b-db1f9692e741",
+          "name": "Share a report to multiple people",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"shares\":\n [\n   {\n     \"email\":\"jperez719.test@gmail.com\"\n   },\n   {\n     \"email\":\"jperez719.test2@gmail.com\"\n   }\n ],\n \"subject\":\"My New Smartsheet email test share\",\n \"message\":\"Hello everyone, how are you? I have shared this sheet with you to see if it will share. Is everyone OK with this\",\n \"accessLevel\":\"ADMIN\",\n \"ccMe\":false\n}"
+            },
+            "url": "{{environment}}/reports/{{reportId}}/shares/multi"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "aa0bf588-653e-47c6-a607-f3c8c514af6e",
+          "name": "Share Sight",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\":\"hmm@te.st\", \"accessLevel\": \"ADMIN\"}"
+            },
+            "url": "{{environment}}/sights/{{sightId}}/shares"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "eed21113-416b-478b-b851-2e938aedf80e",
+          "name": "Share Sight Multi",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"shares\": [\r\n        {\"email\":\"john.doe@smartsheet.com\"},{\"email\":\"jane.doe@smartsheet.com\"}\r\n    ],\r\n    \"subject\": \"My new Smartsheet Sheet\",\r\n    \"message\": \"I have shared a Smartsheet Sheet with you. Please review it for the latest updates\", \r\n    \"accessLevel\": \"VIEWER\",\r\n    \"ccMe\": false\r\n}"
+            },
+            "url": "{{environment}}/sights/{{sightId}}/shares/multi",
+            "description": "mobile only"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "823df838-51af-4221-a89d-6d6e3acd8cc5",
+          "name": "Update a share in a report",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"accessLevel\":\"ADMIN\"\n}"
+            },
+            "url": "{{environment}}/reports/{{reportId}}/shares/{{shareId}}",
+            "description": "This is used for marketing. To get user information on User and what sheets are loaded and used frequently"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f2ed45b3-04cd-42dd-bec1-43ec59c03d3b",
+          "name": "Update Sight Share",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"accessLevel\": \"VIEWER\" \n}"
+            },
+            "url": "{{environment}}/sights/{{sightId}}/shares/{{shareId}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c899c43c-1ada-4589-b892-3495b6220eaa",
+          "name": "Update a specific sheet share 2.0",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"accessLevel\": \"ADMIN\"}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/shares/{{shareId}}",
+            "description": "?sendEmail=true"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "349e8b43-aa86-4ee3-a76a-5d321e7f2750",
+          "name": "Update specific user in workspace",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"accessLevel\":\"ADMIN\"\n}"
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}/shares/{{shareId}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7b0af9c4-2954-4652-93e0-1400d981faf7",
+          "name": "Delete Sight Share",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sights/{{sightId}}/shares/{{shareId}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3d593342-2f09-486f-b845-ae3a4410aebc",
+          "name": "Delete a share in a report",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/reports/{{reportId}}/shares/{{shareId}}",
+            "description": "This is used for marketing. To get user information on User and what sheets are loaded and used frequently"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "44baac01-1c12-42cd-b0a3-252a87ec4b86",
+          "name": "Delete a specific sheet share 2.0",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/shares/{{shareId}}",
+            "description": "?sendEmail=true"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "fa10ac5f-0353-4257-90a6-5604610cfbb0",
+          "name": "Delete workspace share",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\":\"jperez719.test2@gmail.com\", \"accessLevel\": \"EDITOR\"}"
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}/shares/{{shareId}}"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "7a6ec634-76ab-4e1e-92d8-4ec301f994f9",
+      "name": "Sheets",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "25f7c9ac-7831-4fa1-b5e7-1e0b5df366fc",
+          "name": "Get Sheet 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "682e60be-b8b9-481c-b33f-d0f4797781d7",
+          "name": "Get Sheet version 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/version"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7b9bcc8c-e8ac-4efd-99eb-a7a8566468e5",
+          "name": "Get Sheet as Excel/PDF/CSV 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{environment}}/sheets/{{sheetId}}/?paperSize=WIDE",
+              "host": [
+                "{{environment}}"
+              ],
+              "path": [
+                "sheets",
+                "{{sheetId}}",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "paperSize",
+                  "value": "WIDE"
+                }
+              ]
+            },
+            "description": "Gets specific Sheet as Excel/PDF\n\n\n*excel: application/vnd.ms-excel\n(cannont get excel to work)\n\npdf: application/pdf\nfor PDF include papersize option\nenvironment Url/sheet/<sheetId>?paperSize=LETTER\n\ncsv: text/csv"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8c98691e-2f67-4747-94d4-40932f541575",
+          "name": "Get Sheet Publish options 2.0",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/publish"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "96707844-cbef-41a6-a6e7-c573237ad03f",
+          "name": "Create Sheet in Sheets folder",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"API Created Sheet\",\n  \"columns\":\n  [\n    {\n      \"title\":\"Row ID\",\"type\":\"TEXT_NUMBER\",\n      \"systemColumnType\":\"AUTO_NUMBER\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Primary Column\",\n      \"primary\":true,\n      \"type\":\"TEXT_NUMBER\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Favorite\",\n      \"type\":\"CHECKBOX\",\n      \"symbol\":\"STAR\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Modified\",\n      \"type\":\"DATETIME\",\n      \"systemColumnType\":\"MODIFIED_DATE\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Modified By\",\n      \"type\":\"CONTACT_LIST\",\n      \"systemColumnType\":\"MODIFIED_BY\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Created\",\n      \"type\":\"DATETIME\",\n      \"systemColumnType\":\"CREATED_DATE\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Created By\",\n      \"type\":\"CONTACT_LIST\",\n      \"systemColumnType\":\"CREATED_BY\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    }\n  ]\n}"
+            },
+            "url": "{{environment}}/sheets",
+            "description": "Creates sheet in Sheets folder 2.0"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0cd25c85-8523-4211-bded-3b8f2a375678",
+          "name": "Create a Sheet from a sheet 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"destinationType\":\"home\"\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/copy"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4de42793-5be4-4977-b3c2-f4cdb863a091",
+          "name": "Create Sheet from Sheet/Template",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"\",\n  \"fromId\":\n}"
+            },
+            "url": "{{environment}}/sheets",
+            "description": "Creates sheet in Sheets folder,\nSave as"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "18ce5734-be5b-4a3c-85ec-834b2e0811e9",
+          "name": "Move a Sheet 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"destinationType\":\"home\"\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/move"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4b8ccea0-a7d7-47e3-ab4f-ac93b5f4e743",
+          "name": "Import a sheet 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Disposition",
+                "value": "attachment; filename=\"Test sheet with formulas v2.xlsx\""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/vnd.ms-excel"
+              },
+              {
+                "key": "Content-Length",
+                "value": "9000"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{environment}}/sheets/import",
+            "description": "vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "36553f8b-480b-4233-a5b0-e8dce73f8a9a",
+          "name": "Send Sheet via Email",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sendTo\": [{\"email\":\"jperez719.test@gmail.com\"},{\"email\":\"jperez719.test2@gmail.com\"}],\n  \"subject\": \"Test Email for this sheet\",\n  \"message\": \"I am just testing this api email out\",\n  \"ccMe\": true,\n  \"format\": \"PDF\",\n  \"formatDetails\": {\"paperSize\":\"LETTER\"}\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/emails",
+            "description": "Sends sheet as PDF via email\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "85016967-1220-4744-b2df-fe6207457a01",
+          "name": "Sending an update request from a sheet",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"sendTo\":[{\"email\":\"jperez719.test2@gmail.com\"}],\"subject\":\"API update request\",\"message\":\"API Message\",\"ccMe\":false,\n    \"rowIds\":[],\"columnIds\":[4508376538343300],\"includeAttachments\":true,\"includeDiscussions\":true\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/updaterequests"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5a20bf97-b987-4852-8bd5-728ba14eeed7",
+          "name": "Publish Sheet options 2.0",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"readOnlyLiteEnabled\": true,\r\n    \"readOnlyFullEnabled\": false,\r\n    \"readWriteEnabled\": false,\r\n    \"icalEnabled\": false\r\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/publish"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "925e24e9-e30b-4116-a478-d7e61d8fa678",
+          "name": "Update Sheet 2.0",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"API sheet 1.1.6\"\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4bf7bc3c-3c2d-4f07-843e-16df833c586c",
+          "name": "Update Project Sheet critical path 2.0",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userSettings\":{\"criticalPathEnabled\": false}\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8da78583-66b2-417d-9460-73e5138e2378",
+          "name": "Delete Sheet 2.0",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "d82db061-feec-468c-add1-c342c2b17a79",
+      "name": "Sights",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "fcfea9de-2099-4545-a227-0bbb0d69f843",
+          "name": "List Sights",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sights/"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "72bf84f6-4215-462c-a2cd-761356b04478",
+          "name": "Get Sights",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sights",
+            "description": "Retrieves all items in home including reports and templates\n\n*remove \"?include=reports,templates\" to just see Sheets,folders, workspaces"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "50d0002a-09fe-406d-8988-d43b6b80dc94",
+          "name": "Copy Sight",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"destinationType\": \"home\",\n    \"newName\": \"newDashboardName\"\n}"
+            },
+            "url": "{{environment}}/sights/{{sightId}}/copy"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "86d46395-2e14-4909-88a5-af83fd09225c",
+          "name": "Move Sight",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"destinationType\": \"folder\",\n    \"destinationId\": 4574239861827460\n}"
+            },
+            "url": "{{environment}}/sights/{{sightId}}/move"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "337b3782-f4c5-446a-9fac-e76111c6b0e4",
+          "name": "Rename (update) Sight",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"New Dashboard Name\" \n}"
+            },
+            "url": "{{environment}}/sights/{{sightId}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "68eea51c-bacc-408a-8ebf-5f40cb52bf1c",
+          "name": "Delete Sight",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sights/{{sightId}}"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "a4094eaa-d359-4dde-b046-5cc2950d4931",
+      "name": "Templates",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "a01912d6-7016-406e-b976-e36b9c8ce7bc",
+          "name": "Get Private Templates",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/templates",
+            "description": "\n\n"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "51566224-42fa-44a0-8f2d-a6ba8244362b",
+          "name": "Get Public Templates",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/templates/public",
+            "description": "add loc override by adding ?loc={location}\n\ni.e. \nfr_FR = french\nen_EN = spanish\n\n"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "8635e735-d23d-476d-b9a0-812865e72067",
+      "name": "Tokens",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "2fd50107-7f1d-4f1b-9d4b-25909c4dde82",
+          "name": "Get access token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/token"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "fa121895-27aa-4979-8c5a-9759114d19e3",
+          "name": "Add token 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "refresh_token",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{environment}}/token"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c85ca989-3593-4281-85a5-3bef771c3c9f",
+          "name": "Delete Token",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/token"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "546ee7c8-c63e-49b2-8343-891b00899a77",
+      "name": "Users",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "3c5d9693-2f0b-414c-a07c-6a1fd99aa33d",
+          "name": "Get list of users in ORG",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/users"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e34388d7-b466-4480-858f-04514dad10cd",
+          "name": "Get specific user in org",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/users/{{userId}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6842b274-bea8-4535-9d71-12bcbbc21041",
+          "name": "Get user list of sheets",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/users/sheets"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "48ad41b9-4f71-4db3-ada4-c104e6edf2c0",
+          "name": "Get User/ Me",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/users/me",
+            "description": "Gets Current user"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "748e4189-dcfa-4d9e-a623-80a56750e609",
+          "name": "Add a user to ORG",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\":\"jperez719.test@gmail.com\", \n  \"firstName\": \"JP\", \n  \"lastName\": \"Test\", \n  \"licensedSheetCreator\":true, \n  \"admin\": true,\n  \"resourceManager\":true,\n  \"groupAdmin\": false\n}"
+            },
+            "url": "{{environment}}/users"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "1630defe-9e16-4dd2-9fcf-0a0ec007554a",
+          "name": "Update roles of user in org",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"admin\":false,\n    \"licensedSheetCreator\": true,\n    \"groupAdmin\": true,\n    \"resourceViewer\": true\n}"
+            },
+            "url": "{{environment}}/users/{{userId}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "628f4984-e3a7-4edb-8ee8-8bf29adc12aa",
+          "name": "Delete user ",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/users/{{userId}}"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "2e78c468-0fbc-407d-883a-9a74bc561901",
+      "name": "Workspaces",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "932e0b58-61e1-4267-9109-865c1b5dc6cc",
+          "name": "Get a list of workspaces",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/workspaces"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "299a640d-b83b-4a9d-afc6-3a0fb5c6d988",
+          "name": "Get specific workspaces",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "749a474c-3f5b-4cf7-9f22-e9a04de86aff",
+          "name": "Update list of folders in a workspace",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}/folders"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a2a75a66-2d2d-4480-89bd-9b5d8dbba85a",
+          "name": "Get specific user in workspace",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}/shares/{{shareId}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0b448aff-7a06-41b0-8215-f532fbdfd485",
+          "name": "Create a Workspace",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"API Created Workspace\"\n}"
+            },
+            "url": "{{environment}}/workspaces",
+            "description": "include parameters:\n?include=data,attachments,discussions,cellLinks,forms,brand,shares\n\nskipRemap is for Reports and Cell links, skipping keeps the links to original sheet\n?skipRemap=reports,cellLinks"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d52e4324-7bc8-4d27-8260-2d8704782cef",
+          "name": "Create a Workspace from another workspace NEW",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"API Created Workspace\"\n}"
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}/copy",
+            "description": "include parameters:\n?include=data,attachments,discussions,cellLinks,forms,brand,shares\n\nskipRemap is for Reports and Cell links, skipping keeps the links to original sheet\n?skipRemap=reports,cellLinks"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3c25202b-824a-4ef0-97b1-71d59cb5e465",
+          "name": "Create Sheet specified workspace ID 2.0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"API 1.1.9 Created Sheet\",\n  \"columns\":\n  [\n    {\n      \"title\":\"Row ID\",\"type\":\"TEXT_NUMBER\",\n      \"systemColumnType\":\"AUTO_NUMBER\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Primary Column\",\n      \"primary\":true,\n      \"type\":\"TEXT_NUMBER\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Favorite\",\n      \"type\":\"CHECKBOX\",\n      \"symbol\":\"STAR\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Modified\",\n      \"type\":\"DATETIME\",\n      \"systemColumnType\":\"MODIFIED_DATE\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Modified By\",\n      \"type\":\"CONTACT_LIST\",\n      \"systemColumnType\":\"MODIFIED_BY\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Created\",\n      \"type\":\"DATETIME\",\n      \"systemColumnType\":\"CREATED_DATE\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    },\n    {\n      \"title\":\"Created By\",\n      \"type\":\"CONTACT_LIST\",\n      \"systemColumnType\":\"CREATED_BY\",\n      \"format\":\",,,,,,,,,,,,,,,\"\n    }\n  ]\n}"
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}/sheets",
+            "description": "Creates sheet in specified workspace id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "81e3d0b9-6a25-4f9e-b869-1f83449b463a",
+          "name": "Import a sheet in a workspace",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Disposition",
+                "value": "attachment; filename=\"Test sheet with formulas v2.xlsx\""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/vnd.ms-excel"
+              },
+              {
+                "key": "Content-Length",
+                "value": "1100"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}/sheets/import",
+            "description": "vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ddfcd055-3d4e-47a5-a7f6-a38db79cb0c7",
+          "name": "Create a folder in a workspace",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"Workspace folder\"\n}"
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}/folders"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e44cd393-4a04-4b04-939a-5a72cc1eff9d",
+          "name": "Update a specific workspaces",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"updated via API\"\n}"
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d8c04cef-e3ce-48de-b2d6-813f63fc3bb5",
+          "name": "Delete a workspaces",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "e3843716-cec2-4abc-bc60-4165628bb79d",
+      "name": "Get Server Info",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{environment}}/serverinfo",
+        "description": "Creates sheet in Sheets folder,\nSave as"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "56f857b7-7627-4ba6-b995-123e18213eb5",
+      "name": "Get Contacts 2.0",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{environment}}/contacts"
+      },
+      "response": []
+    }
+  ]
+}
