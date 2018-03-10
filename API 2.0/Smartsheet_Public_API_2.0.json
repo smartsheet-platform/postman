@@ -33,7 +33,7 @@
         },
         {
           "_postman_id": "bba270ac-0f9a-4cdf-93fd-60d69fb7fa47",
-          "name": "Get attachment on a sheet",
+          "name": "List sheet attachments",
           "request": {
             "method": "GET",
             "header": [
@@ -47,7 +47,7 @@
               "raw": ""
             },
             "url": "{{environment}}/sheets/{{sheetId}}/attachments",
-            "description": "Attach file to sheet"
+            "description": "Get all sheet attachments"
           },
           "response": []
         },
