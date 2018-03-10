@@ -27,7 +27,7 @@
               "raw": ""
             },
             "url": "{{environment}}/sheets/{{sheetId}}/attachments/{{attachmentId}}",
-            "description": "Attach file to sheet"
+            "description": "Get sheet attachment"
           },
           "response": []
         },
