@@ -537,6 +537,32 @@
       ]
     },
     {
+      "_postman_id": "c1c9a5ac-c851-4016-8fc4-9aef1a895de6",
+      "name": "Contacts",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "ec217825-fa81-4266-8bec-6c7b43b5c9aa",
+          "name": "Get Contacts",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/contacts"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "_postman_id": "786e25be-402b-45d7-b822-8a820e28302d",
       "name": "Discussions",
       "description": null,
@@ -2568,6 +2594,37 @@
       ]
     },
     {
+      "_postman_id": "4108512a-35da-4824-8c75-a3eef74f5e39",
+      "name": "Serverinfo",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "a5e7d50a-4ce3-440d-9ddb-716b363b19f6",
+          "name": "Get Server Info",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/serverinfo",
+            "description": "Creates sheet in Sheets folder,\nSave as"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "_postman_id": "20b9f346-f31f-484d-9c1f-35b7cd6810dc",
       "name": "Shares",
       "description": null,
@@ -4157,63 +4214,6 @@
               "raw": ""
             },
             "url": "{{environment}}/workspaces/{{workspaceId}}"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "c1c9a5ac-c851-4016-8fc4-9aef1a895de6",
-      "name": "Contacts",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "ec217825-fa81-4266-8bec-6c7b43b5c9aa",
-          "name": "Get Contacts",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{environment}}/contacts"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "4108512a-35da-4824-8c75-a3eef74f5e39",
-      "name": "Serverinfo",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "a5e7d50a-4ce3-440d-9ddb-716b363b19f6",
-          "name": "Get Server Info",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{environment}}/serverinfo",
-            "description": "Creates sheet in Sheets folder,\nSave as"
           },
           "response": []
         }
