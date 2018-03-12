@@ -3127,40 +3127,6 @@
           "response": []
         },
         {
-          "_postman_id": "24f5ad8c-f08a-4127-acba-496deed455db",
-          "name": "Import a sheet",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Content-Disposition",
-                "value": "attachment; filename=\"Test sheet with formulas v2.xlsx\""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/vnd.ms-excel"
-              },
-              {
-                "key": "Content-Length",
-                "value": "9000"
-              }
-            ],
-            "body": {
-              "mode": "file",
-              "file": {
-                "src": null
-              }
-            },
-            "url": "{{environment}}/sheets/import",
-            "description": "vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "31289cc8-1e9b-483b-832c-8f08c0388e79",
           "name": "Update Project Sheet critical path",
           "request": {
