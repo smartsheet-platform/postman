@@ -4200,7 +4200,27 @@
       "_postman_id": "c1c9a5ac-c851-4016-8fc4-9aef1a895de6",
       "name": "Contacts",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "ec217825-fa81-4266-8bec-6c7b43b5c9aa",
+          "name": "Get Contacts",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/contacts"
+          },
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "4108512a-35da-4824-8c75-a3eef74f5e39",
@@ -4229,25 +4249,6 @@
         },
         "url": "{{environment}}/serverinfo",
         "description": "Creates sheet in Sheets folder,\nSave as"
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "ec217825-fa81-4266-8bec-6c7b43b5c9aa",
-      "name": "Get Contacts",
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{token}}"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "url": "{{environment}}/contacts"
       },
       "response": []
     }
