@@ -12,10 +12,67 @@
       "description": null,
       "item": [
         {
-          "_postman_id": "feb9cdec-7d8a-40ce-8fa7-73b7241b36c1",
-          "name": "Get an attachment on a sheet",
+          "_postman_id": "2d9eca18-7824-457b-b4db-0a7508e27143",
+          "name": "Add a sheet attachment from Google Drive, Dropbox, Box and evernote",
           "request": {
-            "method": "GET",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"name\": \"test.gif\",\n\"description\":\"value placed in the description field, accessible via edit description\",\n\"url\": \"https://www.dropbox.com/s/m3nhmgt3a6e8rc2/TestGIf.gif?dl=0\", \n\"attachmentType\":\"DROPBOX\"\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/attachments"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3b85f9d4-ee1a-475e-9941-6074cef8c1c5",
+          "name": "Add version of a attachment to sheets",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Disposition",
+                "value": "attachment; filename=\"TestGIf.gif\""
+              },
+              {
+                "key": "Content-Type",
+                "value": "image/gif"
+              },
+              {
+                "key": "Content-Length",
+                "value": "8500"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/attachments/{{attachmentId}}/versions",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "53d33c18-a78e-469a-a1c9-2e9534d2b3ae",
+          "name": "Delete an attachment on a sheet",
+          "request": {
+            "method": "DELETE",
             "header": [
               {
                 "key": "Authorization",
@@ -27,7 +84,27 @@
               "raw": ""
             },
             "url": "{{environment}}/sheets/{{sheetId}}/attachments/{{attachmentId}}",
-            "description": "Get sheet attachment"
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6254c86d-8f87-407f-aaa9-70da53ae6b4e",
+          "name": "Delete an version of attachment on a sheet",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/attachments/{{attachmentId}}/versions",
+            "description": "Attach file to sheet"
           },
           "response": []
         },
@@ -72,93 +149,6 @@
           "response": []
         },
         {
-          "_postman_id": "f4c306d5-5a41-497e-aba7-5a82fc3ff365",
-          "name": "Add an attachment to sheets - mulitpart",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "con",
-                "value": "multipart/form-data"
-              }
-            ],
-            "body": {
-              "mode": "formdata",
-              "formdata": [
-                {
-                  "key": "file",
-                  "type": "file",
-                  "value": null
-                }
-              ]
-            },
-            "url": "{{environment}}/sheets/{{sheetId}}/attachments",
-            "description": "Attach file to sheet"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "3b85f9d4-ee1a-475e-9941-6074cef8c1c5",
-          "name": "Add version of a attachment to sheets",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Content-Disposition",
-                "value": "attachment; filename=\"TestGIf.gif\""
-              },
-              {
-                "key": "Content-Type",
-                "value": "image/gif"
-              },
-              {
-                "key": "Content-Length",
-                "value": "8500"
-              }
-            ],
-            "body": {
-              "mode": "file",
-              "file": {
-                "src": null
-              }
-            },
-            "url": "{{environment}}/sheets/{{sheetId}}/attachments/{{attachmentId}}/versions",
-            "description": "Attach file to sheet"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "2d9eca18-7824-457b-b4db-0a7508e27143",
-          "name": "Add a sheet attachment from Google Drive, Dropbox, Box and evernote",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\"name\": \"test.gif\",\n\"description\":\"value placed in the description field, accessible via edit description\",\n\"url\": \"https://www.dropbox.com/s/m3nhmgt3a6e8rc2/TestGIf.gif?dl=0\", \n\"attachmentType\":\"DROPBOX\"\n}"
-            },
-            "url": "{{environment}}/sheets/{{sheetId}}/attachments"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "d657459f-12df-4cb7-890e-234c4fe463e4",
           "name": "Add an attachment to a comment in a sheets",
           "request": {
@@ -193,10 +183,40 @@
           "response": []
         },
         {
-          "_postman_id": "53d33c18-a78e-469a-a1c9-2e9534d2b3ae",
-          "name": "Delete an attachment on a sheet",
+          "_postman_id": "f4c306d5-5a41-497e-aba7-5a82fc3ff365",
+          "name": "Add an attachment to sheets - mulitpart",
           "request": {
-            "method": "DELETE",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "con",
+                "value": "multipart/form-data"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "value": null
+                }
+              ]
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/attachments",
+            "description": "Attach file to sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "feb9cdec-7d8a-40ce-8fa7-73b7241b36c1",
+          "name": "Get an attachment on a sheet",
+          "request": {
+            "method": "GET",
             "header": [
               {
                 "key": "Authorization",
@@ -208,27 +228,7 @@
               "raw": ""
             },
             "url": "{{environment}}/sheets/{{sheetId}}/attachments/{{attachmentId}}",
-            "description": "Attach file to sheet"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "6254c86d-8f87-407f-aaa9-70da53ae6b4e",
-          "name": "Delete an version of attachment on a sheet",
-          "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{environment}}/sheets/{{sheetId}}/attachments/{{attachmentId}}/versions",
-            "description": "Attach file to sheet"
+            "description": "Get sheet attachment"
           },
           "response": []
         }
