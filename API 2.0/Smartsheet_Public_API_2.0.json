@@ -4203,6 +4203,12 @@
       "item": []
     },
     {
+      "_postman_id": "4108512a-35da-4824-8c75-a3eef74f5e39",
+      "name": "Serverinfo",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "a5e7d50a-4ce3-440d-9ddb-716b363b19f6",
       "name": "Get Server Info",
       "request": {
