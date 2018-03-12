@@ -4226,31 +4226,32 @@
       "_postman_id": "4108512a-35da-4824-8c75-a3eef74f5e39",
       "name": "Serverinfo",
       "description": "",
-      "item": []
-    },
-    {
-      "_postman_id": "a5e7d50a-4ce3-440d-9ddb-716b363b19f6",
-      "name": "Get Server Info",
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{token}}"
+      "item": [
+        {
+          "_postman_id": "a5e7d50a-4ce3-440d-9ddb-716b363b19f6",
+          "name": "Get Server Info",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/serverinfo",
+            "description": "Creates sheet in Sheets folder,\nSave as"
           },
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "url": "{{environment}}/serverinfo",
-        "description": "Creates sheet in Sheets folder,\nSave as"
-      },
-      "response": []
+          "response": []
+        }
+      ]
     }
   ],
   "event": [
