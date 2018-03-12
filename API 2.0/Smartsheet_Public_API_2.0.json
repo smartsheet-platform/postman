@@ -72,40 +72,6 @@
           "response": []
         },
         {
-          "_postman_id": "9c622668-90ff-4db9-b811-567794e64056",
-          "name": "Import CSV file to sheets",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Content-Disposition",
-                "value": "attachment; filename=\"TestGIf.gif\""
-              },
-              {
-                "key": "Content-Type",
-                "value": "image/gif"
-              },
-              {
-                "key": "Content-Length",
-                "value": "8500"
-              }
-            ],
-            "body": {
-              "mode": "file",
-              "file": {
-                "src": null
-              }
-            },
-            "url": "{{environment}}/sheets/{{sheetId}}/attachments",
-            "description": "Import CSV file as new top-level sheet"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "f4c306d5-5a41-497e-aba7-5a82fc3ff365",
           "name": "Add an attachment to sheets - mulitpart",
           "request": {
@@ -3502,6 +3468,40 @@
               "raw": ""
             },
             "url": "{{environment}}/sheets/{{sheetId}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9c622668-90ff-4db9-b811-567794e64056",
+          "name": "Import CSV file to sheets",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Disposition",
+                "value": "attachment; filename=\"TestGIf.gif\""
+              },
+              {
+                "key": "Content-Type",
+                "value": "image/gif"
+              },
+              {
+                "key": "Content-Length",
+                "value": "8500"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/attachments",
+            "description": "Import CSV file as new top-level sheet"
           },
           "response": []
         }
