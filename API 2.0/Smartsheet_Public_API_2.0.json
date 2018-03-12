@@ -3108,84 +3108,6 @@
       "description": null,
       "item": [
         {
-          "_postman_id": "a35c7368-ee31-4c56-a266-bcdc86552cef",
-          "name": "Get Sheet",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{environment}}/sheets"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "9a9726e2-a537-4834-8c5b-0a619d4f7881",
-          "name": "Get Sheet version",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{environment}}/sheets/{{sheetId}}/version"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "9049b057-84e5-453a-a3e8-6db71919955b",
-          "name": "Get Sheet as Excel/PDF/CSV",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/pdf"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": {
-              "raw": "{{environment}}/sheets/{{sheetId}}/?paperSize=WIDE",
-              "host": [
-                "{{environment}}"
-              ],
-              "path": [
-                "sheets",
-                "{{sheetId}}",
-                ""
-              ],
-              "query": [
-                {
-                  "key": "paperSize",
-                  "value": "WIDE"
-                }
-              ]
-            },
-            "description": "Gets specific Sheet as Excel/PDF\n\n\n*excel: application/vnd.ms-excel\n(cannont get excel to work)\n\npdf: application/pdf\nfor PDF include papersize option\nenvironment Url/sheet/<sheetId>?paperSize=LETTER\n\ncsv: text/csv"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "06d5ce9c-27e8-4bbc-be39-210bef67cf14",
           "name": "Get Sheet Publish options",
           "request": {
@@ -3201,6 +3123,63 @@
               "raw": ""
             },
             "url": "{{environment}}/sheets/{{sheetId}}/publish"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "24f5ad8c-f08a-4127-acba-496deed455db",
+          "name": "Import a sheet",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Disposition",
+                "value": "attachment; filename=\"Test sheet with formulas v2.xlsx\""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/vnd.ms-excel"
+              },
+              {
+                "key": "Content-Length",
+                "value": "9000"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{environment}}/sheets/import",
+            "description": "vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "31289cc8-1e9b-483b-832c-8f08c0388e79",
+          "name": "Update Project Sheet critical path",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userSettings\":{\"criticalPathEnabled\": false}\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}"
           },
           "response": []
         },
@@ -3229,8 +3208,8 @@
           "response": []
         },
         {
-          "_postman_id": "c45f20a7-42d2-4840-a2ed-9fb530f8b8c5",
-          "name": "Create a Sheet from a sheet",
+          "_postman_id": "645199f4-5409-4630-9f55-8f8d84f55cb6",
+          "name": "Send Sheet via Email",
           "request": {
             "method": "POST",
             "header": [
@@ -3245,9 +3224,10 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"destinationType\":\"home\"\n}"
+              "raw": "{\n  \"sendTo\": [{\"email\":\"jperez719.test@gmail.com\"},{\"email\":\"jperez719.test2@gmail.com\"}],\n  \"subject\": \"Test Email for this sheet\",\n  \"message\": \"I am just testing this api email out\",\n  \"ccMe\": true,\n  \"format\": \"PDF\",\n  \"formatDetails\": {\"paperSize\":\"LETTER\"}\n}"
             },
-            "url": "{{environment}}/sheets/{{sheetId}}/copy"
+            "url": "{{environment}}/sheets/{{sheetId}}/emails",
+            "description": "Sends sheet as PDF via email\n"
           },
           "response": []
         },
@@ -3299,44 +3279,88 @@
           "response": []
         },
         {
-          "_postman_id": "24f5ad8c-f08a-4127-acba-496deed455db",
-          "name": "Import a sheet",
+          "_postman_id": "9049b057-84e5-453a-a3e8-6db71919955b",
+          "name": "Get Sheet as Excel/PDF/CSV",
           "request": {
-            "method": "POST",
+            "method": "GET",
             "header": [
               {
                 "key": "Authorization",
                 "value": "Bearer {{token}}"
               },
               {
-                "key": "Content-Disposition",
-                "value": "attachment; filename=\"Test sheet with formulas v2.xlsx\""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/vnd.ms-excel"
-              },
-              {
-                "key": "Content-Length",
-                "value": "9000"
+                "key": "Accept",
+                "value": "application/pdf"
               }
             ],
             "body": {
-              "mode": "file",
-              "file": {
-                "src": null
-              }
+              "mode": "raw",
+              "raw": ""
             },
-            "url": "{{environment}}/sheets/import",
-            "description": "vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            "url": {
+              "raw": "{{environment}}/sheets/{{sheetId}}/?paperSize=WIDE",
+              "host": [
+                "{{environment}}"
+              ],
+              "path": [
+                "sheets",
+                "{{sheetId}}",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "paperSize",
+                  "value": "WIDE"
+                }
+              ]
+            },
+            "description": "Gets specific Sheet as Excel/PDF\n\n\n*excel: application/vnd.ms-excel\n(cannont get excel to work)\n\npdf: application/pdf\nfor PDF include papersize option\nenvironment Url/sheet/<sheetId>?paperSize=LETTER\n\ncsv: text/csv"
           },
           "response": []
         },
         {
-          "_postman_id": "645199f4-5409-4630-9f55-8f8d84f55cb6",
-          "name": "Send Sheet via Email",
+          "_postman_id": "9a9726e2-a537-4834-8c5b-0a619d4f7881",
+          "name": "Get Sheet version",
           "request": {
-            "method": "POST",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/version"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a35c7368-ee31-4c56-a266-bcdc86552cef",
+          "name": "Get Sheet",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "aabf49c3-13fe-43c5-90ce-a87d436173e0",
+          "name": "Delete Sheet",
+          "request": {
+            "method": "DELETE",
             "header": [
               {
                 "key": "Authorization",
@@ -3349,10 +3373,9 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"sendTo\": [{\"email\":\"jperez719.test@gmail.com\"},{\"email\":\"jperez719.test2@gmail.com\"}],\n  \"subject\": \"Test Email for this sheet\",\n  \"message\": \"I am just testing this api email out\",\n  \"ccMe\": true,\n  \"format\": \"PDF\",\n  \"formatDetails\": {\"paperSize\":\"LETTER\"}\n}"
+              "raw": ""
             },
-            "url": "{{environment}}/sheets/{{sheetId}}/emails",
-            "description": "Sends sheet as PDF via email\n"
+            "url": "{{environment}}/sheets/{{sheetId}}"
           },
           "response": []
         },
@@ -3380,10 +3403,10 @@
           "response": []
         },
         {
-          "_postman_id": "fe2a5874-e284-49dc-9ab8-d9a3a8fecca3",
-          "name": "Publish Sheet options",
+          "_postman_id": "c45f20a7-42d2-4840-a2ed-9fb530f8b8c5",
+          "name": "Create a Sheet from a sheet",
           "request": {
-            "method": "PUT",
+            "method": "POST",
             "header": [
               {
                 "key": "Authorization",
@@ -3396,9 +3419,9 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"readOnlyLiteEnabled\": true,\r\n    \"readOnlyFullEnabled\": false,\r\n    \"readWriteEnabled\": false,\r\n    \"icalEnabled\": false\r\n}"
+              "raw": "{\n    \"destinationType\":\"home\"\n}"
             },
-            "url": "{{environment}}/sheets/{{sheetId}}/publish"
+            "url": "{{environment}}/sheets/{{sheetId}}/copy"
           },
           "response": []
         },
@@ -3426,8 +3449,8 @@
           "response": []
         },
         {
-          "_postman_id": "31289cc8-1e9b-483b-832c-8f08c0388e79",
-          "name": "Update Project Sheet critical path",
+          "_postman_id": "fe2a5874-e284-49dc-9ab8-d9a3a8fecca3",
+          "name": "Publish Sheet options",
           "request": {
             "method": "PUT",
             "header": [
@@ -3442,32 +3465,9 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"userSettings\":{\"criticalPathEnabled\": false}\n}"
+              "raw": "{\r\n    \"readOnlyLiteEnabled\": true,\r\n    \"readOnlyFullEnabled\": false,\r\n    \"readWriteEnabled\": false,\r\n    \"icalEnabled\": false\r\n}"
             },
-            "url": "{{environment}}/sheets/{{sheetId}}"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "aabf49c3-13fe-43c5-90ce-a87d436173e0",
-          "name": "Delete Sheet",
-          "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{environment}}/sheets/{{sheetId}}"
+            "url": "{{environment}}/sheets/{{sheetId}}/publish"
           },
           "response": []
         },
