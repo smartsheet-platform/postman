@@ -73,7 +73,7 @@
         },
         {
           "_postman_id": "9c622668-90ff-4db9-b811-567794e64056",
-          "name": "Add an attachment to a sheet",
+          "name": "Import CSV file to sheets",
           "request": {
             "method": "POST",
             "header": [
