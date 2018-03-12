@@ -3439,7 +3439,7 @@
         },
         {
           "_postman_id": "9c622668-90ff-4db9-b811-567794e64056",
-          "name": "Import CSV file to sheets",
+          "name": "Import XLSX file to sheets",
           "request": {
             "method": "POST",
             "header": [
@@ -3467,7 +3467,7 @@
               }
             },
             "url": "{{environment}}/sheets/{{sheetId}}/attachments",
-            "description": "Import CSV file as new top-level sheet"
+            "description": "Import an XLSX file as new top-level sheet"
           },
           "response": []
         }
