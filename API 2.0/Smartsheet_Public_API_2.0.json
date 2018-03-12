@@ -101,7 +101,7 @@
               }
             },
             "url": "{{environment}}/sheets/{{sheetId}}/attachments",
-            "description": "Attach file to sheet"
+            "description": "Import CSV file as new top-level sheet"
           },
           "response": []
         },
