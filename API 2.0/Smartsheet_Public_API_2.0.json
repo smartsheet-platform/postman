@@ -3531,15 +3531,11 @@
               },
               {
                 "key": "Content-Disposition",
-                "value": "attachment; filename=\"TestGIf.gif\""
+                "value": "attachment"
               },
               {
                 "key": "Content-Type",
-                "value": "image/gif"
-              },
-              {
-                "key": "Content-Length",
-                "value": "8500"
+                "value": "text/csv"
               }
             ],
             "body": {
@@ -3548,7 +3544,23 @@
                 "src": null
               }
             },
-            "url": "{{environment}}/sheets/{{sheetId}}/attachments",
+            "url": {
+              "raw": "{{environment}}/sheets/import?sheetName=NewSheet",
+              "host": [
+                "{{environment}}"
+              ],
+              "path": [
+                "sheets",
+                "import"
+              ],
+              "query": [
+                {
+                  "key": "sheetName",
+                  "value": "NewSheet",
+                  "equals": true
+                }
+              ]
+            },
             "description": "Import an XLSX file as new top-level sheet"
           },
           "response": []
