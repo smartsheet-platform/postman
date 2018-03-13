@@ -569,7 +569,7 @@
       "item": [
         {
           "_postman_id": "af45054f-c3b7-4dbf-b279-076ac209ff35",
-          "name": "Get cross sheet reference",
+          "name": "Create cross sheet reference",
           "request": {
             "method": "GET",
             "header": [
