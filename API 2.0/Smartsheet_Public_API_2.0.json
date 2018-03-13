@@ -3533,6 +3533,25 @@
             "description": "Import an XLSX file as new top-level sheet"
           },
           "response": []
+        },
+        {
+          "_postman_id": "af45054f-c3b7-4dbf-b279-076ac209ff35",
+          "name": "Get Sheet Copy",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets"
+          },
+          "response": []
         }
       ]
     },
