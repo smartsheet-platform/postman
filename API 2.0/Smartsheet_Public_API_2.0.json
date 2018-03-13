@@ -571,18 +571,22 @@
           "_postman_id": "af45054f-c3b7-4dbf-b279-076ac209ff35",
           "name": "Create cross sheet reference",
           "request": {
-            "method": "GET",
+            "method": "POST",
             "header": [
               {
                 "key": "Authorization",
                 "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": ""
+              "raw": "{\n    \"name\": \"sweil xxxx Range 2\",\n    \"sourceSheetId\": 1228520367122308,\n    \"startRowId\": 7647270053144452,\n    \"endRowId\": 8598546857387908,\n    \"startColumnId\": 5190677265966980,\n    \"endColumnId\": 345985999234948\n}"
             },
-            "url": "{{environment}}/sheets/{{sheetId}}/crosssheetreferences/{{crossSheetReferenceId}}"
+            "url": "{{environment}}/sheets/{{sheetId}}/crosssheetreferences"
           },
           "response": []
         }
