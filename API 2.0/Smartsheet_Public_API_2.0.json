@@ -874,7 +874,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{environment}}/folders"
+            "url": "{{environment}}/folders/{{folderId}}"
           },
           "response": []
         },
