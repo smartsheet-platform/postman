@@ -582,7 +582,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{environment}}/sheets/{{sheetId}}/crosssheetreferences"
+            "url": "{{environment}}/sheets/{{sheetId}}/crosssheetreferences/{{crossSheetReferenceId}}"
           },
           "response": []
         }
