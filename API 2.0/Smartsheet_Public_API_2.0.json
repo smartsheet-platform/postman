@@ -3190,6 +3190,25 @@
           "response": []
         },
         {
+          "_postman_id": "af45054f-c3b7-4dbf-b279-076ac209ff35",
+          "name": "Get Sheet Copy",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "d4aec2ed-96f7-40ab-8189-641f4f2a4056",
           "name": "Update Sheet",
           "request": {
@@ -3531,25 +3550,6 @@
             },
             "url": "{{environment}}/sheets/{{sheetId}}/attachments",
             "description": "Import an XLSX file as new top-level sheet"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "af45054f-c3b7-4dbf-b279-076ac209ff35",
-          "name": "Get Sheet Copy",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{environment}}/sheets"
           },
           "response": []
         }
