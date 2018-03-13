@@ -3236,6 +3236,25 @@
           "response": []
         },
         {
+          "_postman_id": "9a9726e2-a537-4834-8c5b-0a619d4f7881",
+          "name": "Get Sheet version",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/version"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "06d5ce9c-27e8-4bbc-be39-210bef67cf14",
           "name": "Get Sheet Publish options",
           "request": {
@@ -3409,25 +3428,6 @@
               ]
             },
             "description": "Gets specific Sheet as Excel/PDF\n\n\n*excel: application/vnd.ms-excel\n(cannont get excel to work)\n\npdf: application/pdf\nfor PDF include papersize option\nenvironment Url/sheet/<sheetId>?paperSize=LETTER\n\ncsv: text/csv"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "9a9726e2-a537-4834-8c5b-0a619d4f7881",
-          "name": "Get Sheet version",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{environment}}/sheets/{{sheetId}}/version"
           },
           "response": []
         },
