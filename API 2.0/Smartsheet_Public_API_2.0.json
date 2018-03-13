@@ -3171,6 +3171,25 @@
       "description": null,
       "item": [
         {
+          "_postman_id": "a35c7368-ee31-4c56-a266-bcdc86552cef",
+          "name": "Get Sheet",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "06d5ce9c-27e8-4bbc-be39-210bef67cf14",
           "name": "Get Sheet Publish options",
           "request": {
@@ -3363,25 +3382,6 @@
               "raw": ""
             },
             "url": "{{environment}}/sheets/{{sheetId}}/version"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "a35c7368-ee31-4c56-a266-bcdc86552cef",
-          "name": "Get Sheet",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{environment}}/sheets"
           },
           "response": []
         },
