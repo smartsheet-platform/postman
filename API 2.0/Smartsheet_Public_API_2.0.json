@@ -3213,6 +3213,29 @@
           "response": []
         },
         {
+          "_postman_id": "aabf49c3-13fe-43c5-90ce-a87d436173e0",
+          "name": "Delete Sheet",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "06d5ce9c-27e8-4bbc-be39-210bef67cf14",
           "name": "Get Sheet Publish options",
           "request": {
@@ -3405,29 +3428,6 @@
               "raw": ""
             },
             "url": "{{environment}}/sheets/{{sheetId}}/version"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "aabf49c3-13fe-43c5-90ce-a87d436173e0",
-          "name": "Delete Sheet",
-          "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{environment}}/sheets/{{sheetId}}"
           },
           "response": []
         },
