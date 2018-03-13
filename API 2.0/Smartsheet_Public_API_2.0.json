@@ -3190,6 +3190,29 @@
           "response": []
         },
         {
+          "_postman_id": "d4aec2ed-96f7-40ab-8189-641f4f2a4056",
+          "name": "Update Sheet",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"API sheet 1.1.6\"\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "06d5ce9c-27e8-4bbc-be39-210bef67cf14",
           "name": "Get Sheet Publish options",
           "request": {
@@ -3451,29 +3474,6 @@
               "raw": "{\n    \"destinationType\":\"home\"\n}"
             },
             "url": "{{environment}}/sheets/{{sheetId}}/copy"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "d4aec2ed-96f7-40ab-8189-641f4f2a4056",
-          "name": "Update Sheet",
-          "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\":\"API sheet 1.1.6\"\n}"
-            },
-            "url": "{{environment}}/sheets/{{sheetId}}"
           },
           "response": []
         },
