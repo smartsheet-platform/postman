@@ -3172,7 +3172,7 @@
       "item": [
         {
           "_postman_id": "a35c7368-ee31-4c56-a266-bcdc86552cef",
-          "name": "Get Sheet",
+          "name": "List sheets",
           "request": {
             "method": "GET",
             "header": [
