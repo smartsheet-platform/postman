@@ -3993,33 +3993,44 @@
       "description": null,
       "item": [
         {
-          "_postman_id": "951080cf-5159-4fc6-9ccc-eab71e9a91bc",
-          "name": "Get a list of workspaces",
+          "_postman_id": "000d06a2-2a89-447e-9476-18be690c74e1",
+          "name": "Import a sheet in a workspace",
           "request": {
-            "method": "GET",
+            "method": "POST",
             "header": [
               {
                 "key": "Authorization",
                 "value": "Bearer {{token}}"
               },
               {
+                "key": "Content-Disposition",
+                "value": "attachment; filename=\"Test sheet with formulas v2.xlsx\""
+              },
+              {
                 "key": "Content-Type",
-                "value": "application/json"
+                "value": "application/vnd.ms-excel"
+              },
+              {
+                "key": "Content-Length",
+                "value": "1100"
               }
             ],
             "body": {
-              "mode": "raw",
-              "raw": ""
+              "mode": "file",
+              "file": {
+                "src": null
+              }
             },
-            "url": "{{environment}}/workspaces"
+            "url": "{{environment}}/workspaces/{{workspaceId}}/sheets/import",
+            "description": "vnd.openxmlformats-officedocument.spreadsheetml.sheet"
           },
           "response": []
         },
         {
-          "_postman_id": "e51daf28-8ce6-42f0-ab44-de92baa0f8d6",
-          "name": "Get specific workspaces",
+          "_postman_id": "1e977289-1ec0-48b0-88a2-dd3ba8ed3c88",
+          "name": "Delete a workspaces",
           "request": {
-            "method": "GET",
+            "method": "DELETE",
             "header": [
               {
                 "key": "Authorization",
@@ -4062,8 +4073,54 @@
           "response": []
         },
         {
-          "_postman_id": "a231fe21-56f2-4ed6-bac6-f03bea3266e9",
-          "name": "Get specific user in workspace",
+          "_postman_id": "332b3d63-da8e-4d12-b83d-814be3af71d4",
+          "name": "Create a folder in a workspace",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"Workspace folder\"\n}"
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}/folders"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "cf52fd7a-b53c-43e4-bac9-29d13411bdfe",
+          "name": "Create a folder in a workspace Copy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"Workspace folder\"\n}"
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}/folders"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "951080cf-5159-4fc6-9ccc-eab71e9a91bc",
+          "name": "Get a list of workspaces",
           "request": {
             "method": "GET",
             "header": [
@@ -4080,31 +4137,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{environment}}/workspaces/{{workspaceId}}/shares/{{shareId}}"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "9efb61c9-ae1b-49a2-9116-25603bc8b3b3",
-          "name": "Create a Workspace",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\":\"API Created Workspace\"\n}"
-            },
-            "url": "{{environment}}/workspaces",
-            "description": "include parameters:\n?include=data,attachments,discussions,cellLinks,forms,brand,shares\n\nskipRemap is for Reports and Cell links, skipping keeps the links to original sheet\n?skipRemap=reports,cellLinks"
+            "url": "{{environment}}/workspaces"
           },
           "response": []
         },
@@ -4133,6 +4166,53 @@
           "response": []
         },
         {
+          "_postman_id": "9efb61c9-ae1b-49a2-9116-25603bc8b3b3",
+          "name": "Create a Workspace",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"API Created Workspace\"\n}"
+            },
+            "url": "{{environment}}/workspaces",
+            "description": "include parameters:\n?include=data,attachments,discussions,cellLinks,forms,brand,shares\n\nskipRemap is for Reports and Cell links, skipping keeps the links to original sheet\n?skipRemap=reports,cellLinks"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a231fe21-56f2-4ed6-bac6-f03bea3266e9",
+          "name": "Get specific user in workspace",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}/shares/{{shareId}}"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "cf907fee-75cb-4aae-b6ae-e4e76edfbae2",
           "name": "Create Sheet specified workspace ID",
           "request": {
@@ -4157,44 +4237,10 @@
           "response": []
         },
         {
-          "_postman_id": "000d06a2-2a89-447e-9476-18be690c74e1",
-          "name": "Import a sheet in a workspace",
+          "_postman_id": "e51daf28-8ce6-42f0-ab44-de92baa0f8d6",
+          "name": "Get specific workspaces",
           "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Content-Disposition",
-                "value": "attachment; filename=\"Test sheet with formulas v2.xlsx\""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/vnd.ms-excel"
-              },
-              {
-                "key": "Content-Length",
-                "value": "1100"
-              }
-            ],
-            "body": {
-              "mode": "file",
-              "file": {
-                "src": null
-              }
-            },
-            "url": "{{environment}}/workspaces/{{workspaceId}}/sheets/import",
-            "description": "vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "332b3d63-da8e-4d12-b83d-814be3af71d4",
-          "name": "Create a folder in a workspace",
-          "request": {
-            "method": "POST",
+            "method": "GET",
             "header": [
               {
                 "key": "Authorization",
@@ -4207,9 +4253,9 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"name\":\"Workspace folder\"\n}"
+              "raw": ""
             },
-            "url": "{{environment}}/workspaces/{{workspaceId}}/folders"
+            "url": "{{environment}}/workspaces/{{workspaceId}}"
           },
           "response": []
         },
@@ -4233,52 +4279,6 @@
               "raw": "{\n    \"name\":\"updated via API\"\n}"
             },
             "url": "{{environment}}/workspaces/{{workspaceId}}"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "1e977289-1ec0-48b0-88a2-dd3ba8ed3c88",
-          "name": "Delete a workspaces",
-          "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{environment}}/workspaces/{{workspaceId}}"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "cf52fd7a-b53c-43e4-bac9-29d13411bdfe",
-          "name": "Create a folder in a workspace Copy",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"name\":\"Workspace folder\"\n}"
-            },
-            "url": "{{environment}}/workspaces/{{workspaceId}}/folders"
           },
           "response": []
         }
