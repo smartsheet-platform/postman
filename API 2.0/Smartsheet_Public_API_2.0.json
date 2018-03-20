@@ -4258,6 +4258,29 @@
             "url": "{{environment}}/workspaces/{{workspaceId}}"
           },
           "response": []
+        },
+        {
+          "_postman_id": "cf52fd7a-b53c-43e4-bac9-29d13411bdfe",
+          "name": "Create a folder in a workspace Copy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"Workspace folder\"\n}"
+            },
+            "url": "{{environment}}/workspaces/{{workspaceId}}/folders"
+          },
+          "response": []
         }
       ]
     }
