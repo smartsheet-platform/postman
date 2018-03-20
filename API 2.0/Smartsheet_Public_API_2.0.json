@@ -4112,9 +4112,9 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"name\":\"Workspace folder\"\n}"
+              "raw": "{\n    \"newName\":\"copied workspace\"\n}"
             },
-            "url": "{{environment}}/workspaces/{{workspaceId}}/folders"
+            "url": "{{environment}}/workspaces/{{workspaceId}}/copy"
           },
           "response": []
         },
