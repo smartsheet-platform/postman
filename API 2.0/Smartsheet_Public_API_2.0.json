@@ -4097,7 +4097,7 @@
         },
         {
           "_postman_id": "cf52fd7a-b53c-43e4-bac9-29d13411bdfe",
-          "name": "Create a folder in a workspace Copy",
+          "name": "Copy workspace",
           "request": {
             "method": "POST",
             "header": [
