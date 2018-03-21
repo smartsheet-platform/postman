@@ -3195,90 +3195,6 @@
       "description": null,
       "item": [
         {
-          "_postman_id": "a35c7368-ee31-4c56-a266-bcdc86552cef",
-          "name": "List sheets",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{environment}}/sheets"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "d4aec2ed-96f7-40ab-8189-641f4f2a4056",
-          "name": "Update Sheet",
-          "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\":\"API sheet 1.1.6\"\n}"
-            },
-            "url": "{{environment}}/sheets/{{sheetId}}"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "aabf49c3-13fe-43c5-90ce-a87d436173e0",
-          "name": "Delete Sheet",
-          "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{environment}}/sheets/{{sheetId}}"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "9a9726e2-a537-4834-8c5b-0a619d4f7881",
-          "name": "Get Sheet version",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{environment}}/sheets/{{sheetId}}/version"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "06d5ce9c-27e8-4bbc-be39-210bef67cf14",
           "name": "Get Sheet Publish options",
           "request": {
@@ -3456,6 +3372,86 @@
           "response": []
         },
         {
+          "_postman_id": "9a9726e2-a537-4834-8c5b-0a619d4f7881",
+          "name": "Get Sheet version",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}/version"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a35c7368-ee31-4c56-a266-bcdc86552cef",
+          "name": "List sheets",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e0568bca-5a1a-4ab3-9769-0e54d5dbe704",
+          "name": "List sheets Copy",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "aabf49c3-13fe-43c5-90ce-a87d436173e0",
+          "name": "Delete Sheet",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "b500f06e-3a3b-44ad-afe7-053c4820c155",
           "name": "Sending an update request from a sheet",
           "request": {
@@ -3498,6 +3494,29 @@
               "raw": "{\n    \"destinationType\":\"home\"\n}"
             },
             "url": "{{environment}}/sheets/{{sheetId}}/copy"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d4aec2ed-96f7-40ab-8189-641f4f2a4056",
+          "name": "Update Sheet",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"API sheet 1.1.6\"\n}"
+            },
+            "url": "{{environment}}/sheets/{{sheetId}}"
           },
           "response": []
         },
@@ -3567,25 +3586,6 @@
               ]
             },
             "description": "Import an XLSX file as new top-level sheet"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "e0568bca-5a1a-4ab3-9769-0e54d5dbe704",
-          "name": "List sheets Copy",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{environment}}/sheets"
           },
           "response": []
         }
