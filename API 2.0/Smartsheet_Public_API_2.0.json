@@ -3424,7 +3424,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{environment}}/sheets"
+            "url": "{{environment}}/sheets/{{sheetId}}"
           },
           "response": []
         },
